@@ -9,7 +9,7 @@ import play.server.api._
 
 class CustomSSLEngineProvider(appProvider: ApplicationProvider) extends SSLEngineProvider {
 
-  val certificateDirectory: String = "scripts"
+  val certificateDirectory: String = "certs"
 
   def readPassword(): Array[Char] = {
     val passwordPath = FileSystems.getDefault.getPath(certificateDirectory, "password")
@@ -17,7 +17,7 @@ class CustomSSLEngineProvider(appProvider: ApplicationProvider) extends SSLEngin
   }
 
   def readKeyInputStream(): java.io.InputStream = {
-    val keyPath = FileSystems.getDefault.getPath(certificateDirectory, "example.com.jks")
+    val keyPath = FileSystems.getDefault.getPath(certificateDirectory, "disappointed.us.jks")
     Files.newInputStream(keyPath)
   }
 
