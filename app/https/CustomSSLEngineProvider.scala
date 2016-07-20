@@ -67,7 +67,7 @@ class CustomSSLEngineProvider(appProvider: ApplicationProvider) extends SSLEngin
 
     // Configure the SSL context to use TLS
     val sslContext = SSLContext.getInstance("TLS")
-    sslContext.init(keyManagers, trustManagers, null)
+    sslContext.init(keyManagers, null /*trustManagers*/, null)
     sslContext
   }
 
