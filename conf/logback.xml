@@ -27,7 +27,7 @@
         <appender-ref ref="STDOUT" />
     </appender>
 
-    <logger name="play" level="INFO" />
+    <logger name="play" level="TRACE" />
     <logger name="application" level="TRACE" />
     <logger name="https" level="TRACE" />
 

@@ -11,7 +11,7 @@ class HomeController extends Controller {
 
   private def subdomain(implicit r: Request[_]): String = {
     // pull out the host part of the request URI
-    val s = r.host.split(":")(0).replace(".example.com", "")
+    val s = r.host.split(":")(0).replace(".disappointed.us", "")
 
     // This is technically user input, so need to make sure this isn't
     // anything fun like unicode characters or javascript.
@@ -19,4 +19,3 @@ class HomeController extends Controller {
     s
   }
 }
-

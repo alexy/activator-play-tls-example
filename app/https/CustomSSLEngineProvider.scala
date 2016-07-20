@@ -17,7 +17,7 @@ class CustomSSLEngineProvider(appProvider: ApplicationProvider) extends SSLEngin
   }
 
   def readKeyInputStream(): java.io.InputStream = {
-    val keyPath = FileSystems.getDefault.getPath(certificateDirectory, "disappointed.us.jks")
+    val keyPath = FileSystems.getDefault.getPath(certificateDirectory, "disappointment.jks")
     Files.newInputStream(keyPath)
   }
 
@@ -39,7 +39,7 @@ class CustomSSLEngineProvider(appProvider: ApplicationProvider) extends SSLEngin
       // get the extendedEngineAlias
       val keyManagers = kmf.getKeyManagers
       val onlyKeyManager: X509ExtendedKeyManager = keyManagers(0).asInstanceOf[X509ExtendedKeyManager]
-      val defaultAlias = Some("wildcard.example.com")
+      val defaultAlias = Some("disappointment")
       val sniKeyManager = new SniKeyManager(onlyKeyManager, defaultAlias)
       Array(sniKeyManager)
     } finally {
@@ -88,6 +88,8 @@ class CustomSSLEngineProvider(appProvider: ApplicationProvider) extends SSLEngin
     // Clone and modify the default SSL parameters.
     val engine = sslContext.createSSLEngine
     engine.setSSLParameters(sslParameters)
+
+    println("Alexy, created SSL!")
 
     engine
   }
