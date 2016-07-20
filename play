@@ -8,7 +8,7 @@ export KEY_PASSWORD=`cat certs/password`
 # Turn on HTTPS, turn off HTTP.
 # This should be https://example.com:9443
 JVM_OPTIONS="$JVM_OPTIONS -Dhttp.port=disabled"
-JVM_OPTIONS="$JVM_OPTIONS -Dhttps.port=9443"
+JVM_OPTIONS="$JVM_OPTIONS -Dhttps.port=443"
 
 # Note that using the HTTPS port by itself doesn't set rh.secure=true.
 # rh.secure will only return true if the "X-Forwarded-Proto" header is set, and
